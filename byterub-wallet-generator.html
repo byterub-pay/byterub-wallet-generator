@@ -94,7 +94,7 @@
 -->
 
 <head>
-  <title>MoneroV offline wallet generator</title>
+  <title>ByteRub offline wallet generator</title>
   <meta charset="UTF-8">
     <style type="text/css">
         html {
@@ -10678,13 +10678,13 @@ html { font-family: sans-serif }
             <p>
                 This page generates a new
                 <select onchange="js:setCoin(this.selectedIndex);" class="waves-effect waves-light btn" style="max-width: 20%">
-                  <option>MoneroV</option>
+                  <option>ByteRub</option>
                   
                 </select>
                 wallet. It is self contained and
                 does all the necessary calculations locally, so is suitable for generating a new wallet on a machine
                 that is not connected to the network, and may even never be. This way, you can create
-                a MoneroV wallet without risking the keys.
+                a ByteRub wallet without risking the keys.
             </p>
         </div>
     </div>
@@ -10729,7 +10729,7 @@ html { font-family: sans-serif }
                          style="line-height: 25px; height: 25px; font-size: 60%; padding: 0px 1.5rem;"/ id="show_qr_code">
                     </span>
 
-                    <p>This is the address you give to third parties to send MoneroV to you.
+                    <p>This is the address you give to third parties to send ByteRub to you.
                         <br><b>It is the only information here that's meant to be public.</b>
                     </p>
                 </div>
@@ -10851,10 +10851,10 @@ function genwallet(lang)
   address_qr_widget.innerHTML = "";
   mnemonic_widget.innerHTML = mnemonic;
 
-  // only monerov has the URI scheme
+  // only byterub has the URI scheme
   if (prefix_widget.value == "4") {
     qr=new QRCode(address_qr_widget, {correctLevel:QRCode.CorrectLevel.L});
-    qr.makeCode("monerov:"+keys.public_addr);
+    qr.makeCode("byterub:"+keys.public_addr);
   }
   else {
     qr = null;
@@ -10898,7 +10898,7 @@ function genwallet_prefix_worker()
   mnemonic_widget.innerHTML = mnemonic;
 
   qr=new QRCode(address_qr_widget, {correctLevel:QRCode.CorrectLevel.L});
-  qr.makeCode("monerov:"+keys.public_addr);
+  qr.makeCode("byterub:"+keys.public_addr);
 }
 
 var zerohex="0000000000000000000000000000000000000000000000000000000000000000";
